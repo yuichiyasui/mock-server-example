@@ -1,0 +1,15 @@
+{
+  "name": "mock-server-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "mock": "prism mock ./schema.yaml -p 4010"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@stoplight/prism-cli": "5.4.0"
+  }
+}
