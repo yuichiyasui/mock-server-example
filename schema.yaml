@@ -34,8 +34,17 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Pets"
-              example:
-                [{ id: 1, name: ポチ, tag: 犬 }, { id: 2, name: タマ, tag: 猫 }]
+              examples:
+                case1:
+                  summary: 通常のケース
+                  value:
+                    [
+                      { id: 1, name: ポチ, tag: 犬 },
+                      { id: 2, name: タマ, tag: 猫 },
+                    ]
+                case2:
+                  summary: 0件の場合
+                  value: []
         default:
           description: unexpected error
           content:
