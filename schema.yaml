@@ -51,18 +51,18 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
-                example:
-                  code: 404
-                  message: "not found."
+              example:
+                code: 404
+                message: "not found."
         "default":
           description: unexpected error
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
-                example:
-                  code: 500
-                  message: "server error."
+              example:
+                code: 500
+                message: "server error."
     post:
       summary: Create a pet
       operationId: createPets
