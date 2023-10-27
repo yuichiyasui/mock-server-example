@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
+    "dev:mock": "pnpm mock & pnpm dev --mode mock",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",

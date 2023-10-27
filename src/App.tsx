@@ -10,6 +10,7 @@ export default function App() {
         <h1>Mock Server Example</h1>
         <PetList mockBehavior="success" />
         <PetList mockBehavior="empty" />
+        <PetList mockBehavior="not-found" />
         <PetList mockBehavior="error" />
       </main>
     </QueryClientProvider>

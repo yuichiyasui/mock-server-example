@@ -45,12 +45,24 @@ paths:
                 case2:
                   summary: 0件の場合
                   value: []
-        default:
+        "404":
+          description: not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+                example:
+                  code: 404
+                  message: "not found."
+        "default":
           description: unexpected error
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
+                example:
+                  code: 500
+                  message: "server error."
     post:
       summary: Create a pet
       operationId: createPets

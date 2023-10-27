@@ -1,8 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 
-const API_URL = "http://localhost:4010";
+const API_URL = import.meta.env.VITE_API_URL;
 
-type MockBehavior = "success" | "empty" | "error";
+type MockBehavior =
+  | "success"
+  | "empty"
+  | "not-found"
+  | "server-error"
+  | "error";
 
 type Props = {
   mockBehavior: MockBehavior;
@@ -10,12 +15,14 @@ type Props = {
 
 const addPrefer = (behavior: MockBehavior) => {
   switch (behavior) {
+    case "success":
+      return "example=case1";
     case "empty":
       return "example=case2";
-    case "error":
+    case "not-found":
       return "code=404";
     default:
-      return "example=case1";
+      return "code=500";
   }
 };
 
@@ -32,9 +39,9 @@ export const PetList = ({ mockBehavior }: Props) => {
   });
 
   return (
-    <div>
-      <p>{mockBehavior}</p>
-      <div>{JSON.stringify(data)}</div>
-    </div>
+    <section>
+      <h2>{mockBehavior}</h2>
+      <p>{JSON.stringify(data)}</p>
+    </section>
   );
 };
